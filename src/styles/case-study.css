@@ -1,0 +1,21 @@
+/* ========================================
+   Design Tokens
+======================================== */
+
+:root {
+  --bg: #0d0e0f;
+  --bg-soft: #121415;
+
+  --white: #f5f3ee;
+  --text: rgba(245, 243, 238, 0.78);
+  --muted: rgba(245, 243, 238, 0.45);
+  --subtle: rgba(245, 243, 238, 0.22);
+
+  --border: rgba(245, 243, 238, 0.1);
+
+  --accent: #22d3ee;
+
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
