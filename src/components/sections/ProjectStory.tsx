@@ -166,11 +166,7 @@ export default function ProjectStory() {
           </div>
         </div>
 
-        <div className="border-b border-[var(--border)] py-8">
-          <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-[var(--muted)]">
-            02 / The Story
-          </span>
-        </div>
+       
       </div>
     </section>
   );
