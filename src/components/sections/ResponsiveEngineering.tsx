@@ -18,7 +18,7 @@ export default function ResponsiveEngineering() {
         >
           <div className="mb-8">
             <span className="font-mono text-md uppercase tracking-[0.2em] text-[var(--accent)]">
-              10 / Responsive Engineering
+              09 / Responsive Engineering
             </span>
           </div>
           <h2 className="text-4xl font-medium tracking-[-0.045em] sm:text-5xl lg:text-[68px] lg:leading-[0.98]">
@@ -60,7 +60,7 @@ export default function ResponsiveEngineering() {
             {/* 1. DESKTOP MOCKUP CONTAINER */}
             <div className="relative w-full md:w-[70%] max-w-[700px] flex justify-center">
               <img
-                src="/images/mockups/desktop-preview.png" // آدرس عکس لپ‌تاپ یا دسکتاپ بدون بک‌گراند
+                src="/images/laptop-removebg-preview.png" // آدرس عکس لپ‌تاپ یا دسکتاپ بدون بک‌گراند
                 alt="Desktop Version Preview"
                 className="w-full h-auto object-contain drop-shadow-2xl"
               />
@@ -69,7 +69,7 @@ export default function ResponsiveEngineering() {
             {/* 2. MOBILE MOCKUP CONTAINER (Positioned slightly overlapping on desktop) */}
             <div className="relative w-1/2 md:w-[25%] max-w-[220px] md:-ml-12 md:translate-y-8 flex justify-center">
               <img
-                src="/images/mockups/mobile-preview.png" // آدرس عکس گوشی بدون بک‌گراند
+                src="/images/mobile-removebg-preview.png" // آدرس عکس گوشی بدون بک‌گراند
                 alt="Mobile Version Preview"
                 className="w-full h-auto object-contain drop-shadow-2xl"
               />

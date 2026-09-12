@@ -331,7 +331,7 @@ export default function FrontendArchitecture() {
         >
           <div className="pb-6">
             <span className="pb-6 font-mono text-md uppercase tracking-[0.2em] text-[var(--accent)]">
-              08 / Frontend Architecture
+              07 / Frontend Architecture
             </span>
           </div>
 

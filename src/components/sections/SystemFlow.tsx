@@ -108,7 +108,7 @@ export default function SystemFlow() {
         <div className="mb-12 max-w-3xl">
         <div className="mb-10">
           <span className="font-mono text-md uppercase tracking-[0.2em] text-[var(--accent)]">
-            05 / System Flow
+            04 / System Flow
           </span>
         </div>
           <h2 className="text-3xl font-bold tracking-tight md:text-5xl">

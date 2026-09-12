@@ -981,7 +981,7 @@ export default function ProductSystems() {
         {/* Header */}
         <div className="border-b border-[var(--border)] pb-10">
           <span className="font-mono text-md uppercase tracking-[0.2em] text-[var(--accent)]">
-            07 / Product Features
+            06 / Product Features
           </span>
 
           <div className="mt-8 grid gap-8 lg:grid-cols-[1fr_430px] lg:items-end">

@@ -91,7 +91,7 @@ export default function DesignSystem() {
         >
           <div className="mb-8">
             <span className="font-mono text-md uppercase tracking-[0.2em] text-[var(--accent)]">
-              09 / Design System
+              08 / Design System
             </span>              
           </div>
 

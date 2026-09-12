@@ -1,129 +1,267 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import { motion } from "framer-motion";
-import { FileText, ExternalLink, Menu, X } from "lucide-react";
+import { useState } from "react";
+import { Menu, X, ArrowUpRight } from "lucide-react";
 
-const navLinks = [
-  { name: "Story", href: "#story" },
-  { name: "Product", href: "#product" },
-  { name: "Engineering", href: "#engineering" },
-  { name: "Challenges", href: "#challenges" },
-  { name: "About", href: "#about" },
+
+const links = [
+  {
+    title: "Story",
+    href: "#story",
+  },
+  {
+    title: "Architecture",
+    href: "#frontend-architecture",
+  },
+  {
+    title: "Challenges",
+    href: "#technical-challenges",
+  },
+  {
+    title: "About",
+    href: "#about",
+  },
 ];
 
-export default function Navbar() {
-  const [scrolled, setScrolled] = useState(false);
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 40);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+export default function Navbar() {
+
+  const [open, setOpen] = useState(false);
+
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? "bg-[#0D0F12]/80 backdrop-blur-xl border-b border-slate-800/80 py-3"
-          : "bg-transparent py-5"
-      }`}
+      className="
+      fixed
+      top-0
+      z-50
+      w-full
+      border-b
+      border-[var(--border)]
+      bg-[var(--bg)]/80
+      backdrop-blur-md
+      "
     >
-      <div className="max-w-6xl mx-auto px-6 flex items-center justify-between">
-        {/* Brand Logo */}
-        <a href="#" className="flex items-center gap-2 group">
-          <div className="w-8 h-8 rounded-lg bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center font-black text-cyan-400 group-hover:bg-cyan-500 group-hover:text-slate-950 transition-all">
-            M
-          </div>
-          <span className="font-extrabold text-lg text-white tracking-wider">
-            MENULY
+
+      <div
+        className="
+        mx-auto
+        flex
+        h-20
+        w-[85%]
+        items-center
+        justify-between
+        "
+      >
+
+
+        {/* LOGO */}
+
+
+        <a
+          href="#"
+          className="
+          font-mono
+          text-xs
+          uppercase
+          tracking-[0.2em]
+          text-[var(--white)]
+          "
+        >
+          Menuly
+          <span className="text-[var(--accent)]">
+            {" "}
+            / Case Study
           </span>
         </a>
 
-        {/* Desktop Navigation Links */}
-        <nav className="hidden md:flex items-center gap-8 text-xs font-mono">
-          {navLinks.map((link) => (
+
+
+
+        {/* DESKTOP LINKS */}
+
+
+        <nav
+          className="
+          hidden
+          items-center
+          gap-8
+          lg:flex
+          "
+        >
+
+          {links.map((item)=>(
             <a
-              key={link.name}
-              href={link.href}
-              className="text-slate-400 hover:text-cyan-400 transition-colors uppercase tracking-widest"
+              key={item.title}
+              href={item.href}
+              className="
+              font-mono
+              text-[11px]
+              uppercase
+              tracking-[0.15em]
+              text-[var(--muted)]
+              transition
+              hover:text-[var(--white)]
+              "
             >
-              {link.name}
+              {item.title}
             </a>
           ))}
+
+
         </nav>
 
-        {/* Action Buttons */}
-        <div className="hidden md:flex items-center gap-3">
+
+
+
+        {/* RIGHT */}
+
+
+        <div
+          className="
+          hidden
+          items-center
+          gap-6
+          lg:flex
+          "
+        >
+
           <a
-            href="/resume.pdf"
+            href="https://menuly.reihanejafaie.ir/menuly-demo"
             target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-2 px-4 py-2 rounded-lg bg-[#161B22] border border-slate-800 text-slate-300 hover:text-white hover:border-slate-700 text-xs font-mono transition-all"
+            rel="noreferrer"
+            className="
+            flex
+            items-center
+            gap-2
+            font-mono
+            text-[11px]
+            uppercase
+            tracking-[0.15em]
+            text-[var(--accent)]
+            "
           >
-            <FileText className="w-3.5 h-3.5 text-cyan-400" />
-            <span>Resume</span>
+            Live
+            <ArrowUpRight size={13}/>
           </a>
+
+
           <a
-            href="https://menuly.ir"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-1.5 px-4 py-2 rounded-lg bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold text-xs font-mono transition-all shadow-lg shadow-cyan-500/20"
+            href="#contact"
+            className="
+            border
+            border-[var(--border)]
+            px-5
+            py-2.5
+            font-mono
+            text-[11px]
+            uppercase
+            tracking-[0.15em]
+            transition
+            hover:border-[var(--accent)]
+            "
           >
-            <span>Live App</span>
-            <ExternalLink className="w-3.5 h-3.5" />
+            Contact
           </a>
+
+
         </div>
 
-        {/* Mobile Toggle */}
+
+
+
+
+        {/* MOBILE BUTTON */}
+
+
         <button
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="md:hidden text-slate-300 hover:text-white"
+          onClick={()=>setOpen(!open)}
+          className="
+          lg:hidden
+          text-[var(--muted)]
+          "
         >
-          {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+
+          {open
+            ?
+            <X size={22}/>
+            :
+            <Menu size={22}/>
+          }
+
         </button>
+
+
       </div>
 
-      {/* Mobile Menu Dropdown */}
-      {mobileMenuOpen && (
-        <motion.div
-          initial={{ opacity: 0, y: -10 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="md:hidden bg-[#161B22] border-b border-slate-800 p-6 space-y-4 font-mono text-xs"
+
+
+
+
+      {/* MOBILE MENU */}
+
+
+      {open && (
+
+        <div
+          className="
+          border-t
+          border-[var(--border)]
+          bg-[var(--bg)]
+          px-[7.5%]
+          py-8
+          lg:hidden
+          "
         >
-          {navLinks.map((link) => (
+
+          <nav
+            className="
+            flex
+            flex-col
+            gap-6
+            "
+          >
+
+            {links.map((item)=>(
+              <a
+                key={item.title}
+                href={item.href}
+                onClick={()=>setOpen(false)}
+                className="
+                font-mono
+                text-xs
+                uppercase
+                tracking-[0.2em]
+                text-[var(--muted)]
+                "
+              >
+                {item.title}
+              </a>
+            ))}
+
+
             <a
-              key={link.name}
-              href={link.href}
-              onClick={() => setMobileMenuOpen(false)}
-              className="block text-slate-300 hover:text-cyan-400 py-1"
+              href="#contact"
+              className="
+              mt-4
+              font-mono
+              text-xs
+              uppercase
+              tracking-[0.2em]
+              text-[var(--accent)]
+              "
             >
-              {link.name}
+              Contact
             </a>
-          ))}
-          <div className="pt-4 border-t border-slate-800 flex flex-col gap-2">
-            <a
-              href="/resume.pdf"
-              target="_blank"
-              className="flex items-center justify-center gap-2 px-4 py-2 rounded-lg bg-[#0D0F12] border border-slate-800 text-slate-300"
-            >
-              <FileText className="w-3.5 h-3.5 text-cyan-400" />
-              <span>Resume</span>
-            </a>
-            <a
-              href="https://menuly.ir"
-              target="_blank"
-              className="flex items-center justify-center gap-2 px-4 py-2 rounded-lg bg-cyan-500 text-slate-950 font-bold"
-            >
-              <span>Live App</span>
-              <ExternalLink className="w-3.5 h-3.5" />
-            </a>
-          </div>
-        </motion.div>
+
+
+          </nav>
+
+        </div>
+
       )}
+
+
     </header>
   );
 }

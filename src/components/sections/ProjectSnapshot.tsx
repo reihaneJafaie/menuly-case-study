@@ -281,7 +281,7 @@ export default function ProjectSnapshot() {
               text-[var(--accent)]
             "
           >
-            02 / Project Snapshot
+            01 / Project Snapshot
           </span>
         </div>
 

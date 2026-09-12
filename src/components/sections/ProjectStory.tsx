@@ -101,7 +101,7 @@ export default function ProjectStory() {
          mx-auto">
         <div className="mb-10">
           <span className="font-mono text-md uppercase tracking-[0.2em] text-[var(--accent)]">
-            03 / The Story
+            02 / The Story
           </span>
         </div>
 

@@ -67,7 +67,7 @@ export default function ProductOverview() {
       <div className="w-[85%] mx-auto mt-25">
         <div className="mb-10">
           <span className="font-mono text-md uppercase tracking-[0.2em] text-[var(--accent)]">
-            04 / Product Overview
+            03 / Product Overview
           </span>
         </div>
 
